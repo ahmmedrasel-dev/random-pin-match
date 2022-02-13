@@ -40,13 +40,15 @@ document.getElementById('keypad').addEventListener('click', function (e) {
 // Generate Pin and Typed Pin Matching Check Function.
 function varifyPin() {
   const generatePinNumber = document.getElementById('disply-pin').value;
-  const typePinNumber = document.getElementById('typed-number').value;
+  const typeInput = document.getElementById('typed-number');
+  const typePinNumber = typeInput.value;
   const notifysuccess = document.getElementById('notify-success');
   const notifyFail = document.getElementById('notify-fail');
 
   if (generatePinNumber == typePinNumber) {
     notifysuccess.style.display = 'block';
     notifyFail.style.display = 'none';
+    typeInput.value = ''
   } else {
     notifyFail.style.display = "block";
     notifysuccess.style.display = 'none'
